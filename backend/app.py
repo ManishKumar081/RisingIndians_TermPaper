@@ -3,10 +3,12 @@ from __future__ import annotations
 import time
 
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 from predictor import ModelPredictor
 
 app = Flask(__name__)
+CORS(app)  # allow all origins
 predictor = ModelPredictor("models")
 
 
